@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import axios from "axios";
 import "./App.css";
 
 function App() {
@@ -7,9 +6,10 @@ function App() {
 
   async function fetchData() {
     try {
-      const response = await axios.get("https://restcountries.com/v3.1/all");
-      setData(response.data);
-      console.log(response.data);
+      const response = await fetch("https://restcountries.com/v3.1/all");
+      const countries = await response.json();
+      setData(countries);
+      // console.log(response.data);
     } catch (err) {
       console.log("Error fetching API: " + err);
     }
