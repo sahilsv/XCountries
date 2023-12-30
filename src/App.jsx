@@ -26,7 +26,7 @@ function App() {
           <div key={country.cca3} className="card">
             <img
               src={country.flags.png}
-              alt={country.flags.alt}
+              alt="country-flag"
               width={100}
               height={100}
             />
